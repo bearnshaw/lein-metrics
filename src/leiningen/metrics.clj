@@ -8,7 +8,7 @@
            [java.text SimpleDateFormat]))
 
 (defn- metrics-dir [project]
-  (let [f (file (.getParent (file (:source-path project)))
+  (let [f (file (.getParent (file (first (:source-paths project))))
                 ".metrics"
                 (.format (SimpleDateFormat. "yyyyMMddhhmmss") (Date.)))]
     (when-not (.exists f)

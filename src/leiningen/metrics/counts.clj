@@ -15,7 +15,7 @@
   ([project args]
      (counts {} project args))
   ([metrics project args]
-     (let [src-path (file (:source-path project))
+     (let [src-path (file (first (:source-paths project)))
            codes (codes src-path)]
        (assoc metrics
          :count
